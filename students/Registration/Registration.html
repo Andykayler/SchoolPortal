@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #7e7e7e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .registration-form {
+            background-color: #f7f3fa;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Database connection
+    $servername = "localhost";
+    $username = "root"; // Default XAMPP username
+    $password = ""; // Default XAMPP password
+    $dbname = "student_registration";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Collect and sanitize user input
+    $userType = $conn->real_escape_string($_POST['userType']);
+    $name = $conn->real_escape_string($_POST['name']);
+    $regNo = $conn->real_escape_string($_POST['RegNo']);
+    $gender = $conn->real_escape_string($_POST['gender']);
+    $semester = $conn->real_escape_string($_POST['semester']);
+    $major = isset($_POST['major']) ? $conn->real_escape_string($_POST['major']) : NULL;
+    $courses = implode(", ", $_POST['courses']); // Convert courses array to a comma-separated string
+
+    // Insert data into the database
+    $sql = "INSERT INTO students (userType, name, regNo, gender, semester, major, courses)
+            VALUES ('$userType', '$name', '$regNo', '$gender', '$semester', '$major', '$courses')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<div class='alert alert-success text-center'>Registration successful!</div>";
+    } else {
+        echo "<div class='alert alert-danger text-center'>Error: " . $sql . "<br>" . $conn->error . "</div>";
+    }
+
+    $conn->close();
+}
+?>
+
+<div class="registration-form">
+    <h5 class="text-center">Register</h5>
+    <form id="registrationForm" method="POST" action="">
+        <div class="form-group">
+            <label for="userType">User Type</label>
+            <select class="form-control" id="userType" name="userType" required>
+                <option value="student">Student</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="regNo">Registration No.</label>
+            <input type="text" class="form-control" id="regNo" name="regNo" placeholder="eg. 'BScICT/21/001'" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="semester">Semester</label>
+            <select class="form-control" id="semester" name="semester" required>
+                <option value="">Select Semester</option>
+                <option value="semester1">Semester 1</option>
+                <option value="semester2">Semester 2</option>
+                <option value="semester3">Semester 3</option>
+                <option value="semester4">Semester 4</option>
+                <option value="semester5">Semester 5</option>
+                <option value="semester6">Semester 6</option>
+                <option value="semester7">Semester 7</option>
+                <option value="semester8">Semester 8</option>
+            </select>
+        </div>
+        <div class="form-group" id="majorContainer" style="display:none;">
+            <label for="major">Select Major</label>
+            <select class="form-control" id="major" name="major">
+                <!-- Majors will be dynamically populated here -->
+            </select>
+        </div>
+        <div class="form-group" id="coursesContainer" style="display:none;">
+            <label for="courses">Courses</label>
+            <select class="form-control" id="courses" name="courses[]" multiple>
+                <!-- Courses will be dynamically populated here -->
+            </select>
+        </div>
+        <button type="button" class="btn btn-secondary btn-block" onclick="cancelForm()">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-block">Request approval</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    const semesterCourses = {
+        semester1: ['BICT1101', 'BICT1102', 'BICT1103', 'BMAT1104', 'BLAN1105', 'BCWV1106'],
+        semester2: ['BICT1201', 'BICT1202', 'BICT1203', 'BMAT1204', 'BLAN1205', 'BCWV1206'],
+        semester3: ['BICT2101', 'BSOC2102', 'BICT2103', 'BICT2104', 'BICT2105'],
+        semester4: ['BICT2201', 'BICT2202', 'BICT2203', 'BMAT2204', 'BLAN2205'],
+        semester5: {
+            core: ['BICT3101', 'BICT3102'],
+            majors: {
+                "Software Engineering": ['BICT3103', 'BICT3104', 'BICT3105'],
+                "Network Engineering": ['BICT3203', 'BICT3204', 'BICT3205']
+            }
+        },
+        semester6: {
+            core: ['BICT3201', 'BICT3202'],
+            majors: {
+                "Software Engineering": ['BICT3203', 'BICT3204', 'BICT3205'],
+                "Network Engineering": ['BICT3303', 'BICT3304', 'BICT3305']
+            }
+        },
+        semester7: ['Internships'],
+        semester8: {
+            core: ['ICT Audit'],
+            majors: {
+                "Software Engineering": ['BICT4101', 'BICT4102', 'BICT4103'],
+                "Network Engineering": ['BICT4201', 'BICT4202', 'BICT4203']
+            }
+        },
+    };
+
+    document.getElementById('semester').addEventListener('change', function() {
+        const semester = this.value;
+        const coursesSelect = document.getElementById('courses');
+        const coursesContainer = document.getElementById('coursesContainer');
+        const majorSelect = document.getElementById('major');
+        const majorContainer = document.getElementById('majorContainer');
+
+        coursesSelect.innerHTML = ''; // Clear previous options
+        majorSelect.innerHTML = ''; // Clear previous options
+
+        if (semester) {
+            if (semester === 'semester5' || semester === 'semester6' || semester === 'semester8') {
+                // Show major selection for specific semesters
+                majorContainer.style.display = 'block';
+                majorSelect.innerHTML = '<option value="">Select Major</option>';
+                Object.keys(semesterCourses[semester].majors).forEach(major => {
+                    majorSelect.innerHTML += `<option value="${major}">${major}</option>`;
+                });
+            } else {
+                majorContainer.style.display = 'none';
+            }
+
+            const selectedCourses = semesterCourses[semester].core || semesterCourses[semester];
+
+            if (Array.isArray(selectedCourses)) {
+                coursesContainer.style.display = 'block';
+                selectedCourses.forEach(course => {
+                    coursesSelect.innerHTML += `<option value="${course}">${course}</option>`;
+                });
+            } else {
+                coursesContainer.style.display = 'none';
+            }
+        } else {
+            coursesContainer.style.display = 'none';
+            majorContainer.style.display = 'none';
+        }
+    });
+
+    document.getElementById('major').addEventListener('change', function() {
+        const semester = document.getElementById('semester').value;
+        const major = this.value;
+        const coursesSelect = document.getElementById('courses');
+        const coursesContainer = document.getElementById('coursesContainer');
+
+        coursesSelect.innerHTML = ''; // Clear previous options
+
+        if (semester && major) {
+            const selectedCourses = semesterCourses[semester].majors[major];
+
+            if (Array.isArray(selectedCourses)) {
+                coursesContainer.style.display = 'block';
+                selectedCourses.forEach(course => {
+                    coursesSelect.innerHTML += `<option value="${course}">${course}</option>`;
+                });
+            }
+        } else {
+            coursesContainer.style.display = 'none';
+        }
+    });
+
+    function cancelForm() {
+        document.getElementById('registrationForm').reset();
+        document.getElementById('coursesContainer').style.display = 'none';
+        document.getElementById('majorContainer').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

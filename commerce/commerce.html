@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daeyang University - BSc Arts In Business</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333; /* Dark grey background */
+            padding: 1em;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f9ad25; /* Orange for 'Daeyang' */
+        }
+
+        .navbar .logo::after {
+            content: 'University';
+            font-weight: normal;
+            color: #A9A9A9; /* Grey for 'University' */
+            margin-left: 5px;
+        }
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            margin-left: 2em;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #f9f9f9;
+            padding: 2em;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+        }
+
+        .content .about, .content .structure, .content .career {
+            margin-bottom: 2em;
+        }
+
+        .content h2 {
+            font-size: 1.8em;
+            color: #1565C0; /* Blue color for section headings */
+            margin-bottom: 1em;
+        }
+
+        .content p, .content ul {
+            font-size: 1em;
+            color: #333;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+
+        .content ul li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Card Container */
+        .card {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            width: 80%;
+            margin: 2em auto;
+        }
+
+        /* Content inside card */
+        .card h2 {
+            font-size: 1.8em;
+            color: #1565C0; /* Blue headings */
+            margin-bottom: 1em;
+        }
+
+        .card p, .card ul {
+            font-size: 1em;
+            color: #333;
+        }
+
+        .card ul {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .navbar nav {
+                display: none; /* Hide navigation by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: #333; /* Dark grey background for dropdown */
+                position: absolute;
+                top: 60px; /* Position below navbar */
+                left: 0;
+                z-index: 1;
+            }
+
+            .navbar nav.active {
+                display: flex; /* Show nav when active */
+            }
+
+            .navbar .menu-btn {
+                display: block; /* Show menu button */
+            }
+
+            .navbar nav a {
+                margin: 0.5em 0;
+                margin-left: 0; /* Remove left margin for mobile view */
+                padding: 0.5em 1em; /* Add padding for links */
+                border: none; /* Remove borders */
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 0.5em;
+                margin: 1em;
+            }
+
+            .card {
+                padding: 1.5em;
+            }
+
+            .content h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Daeyang</div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <nav id="navbar">
+            <a href="../index.html">HOME</a>
+            <a href="../PROJECT/contact.html">CONTACT US</a>
+            <a href="#">APPLICATION FORM</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Daeyang School of Business and management sciences</h1>
+        <p>Build your business acumen and leadership skills to succeed in today's fast-paced global market.</p>
+    </section>
+
+    <!-- Content Section inside Card -->
+    <section class="content">
+        <div class="card">
+            <h2>About the Programs</h2>
+            <p>Daeyang School of Business and management sciences equips students with the tools and skills necessary to succeed in various sectors of the economy, including finance, marketing, entrepreneurship, and management. The curriculum emphasizes both theory and practical applications, preparing students for leadership roles.</p>
+        </div>
+
+        <div class="card">
+            <h2>Program Offered</h2>
+            <ul>
+                <li>Bachelor of Commerce in Business Administration</li>
+                <li>Bachelor of Commerce in Accountancy</li>
+                <li>Bachelor of Commerce in Human Resource Management</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Program Structure</h2>
+            <ul>
+                <li>Year 1: Principles of Management, Economics, Business Communication, Financial Accounting</li>
+                <li>Year 2: Marketing, Organizational Behavior, Corporate Finance, Business Law</li>
+                <li>Year 3: Entrepreneurship, Operations Management, International Business, Human Resource Management</li>
+                <li>Year 4: Strategic Management, Business Ethics, Project Management, Final Year Project</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Careers</h2>
+            <p>Graduates of the Business Administration program can pursue careers in the following areas:</p>
+            <ul>
+                <li>Business Consultant</li>
+                <li>Marketing Manager</li>
+                <li>Financial Analyst</li>
+                <li>Entrepreneur</li>
+                <li>Project Manager</li>
+                <li>Human Resources Manager</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Contact Information</h2>
+            <p>For more information about this program, please contact our admissions office.</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:admissions@daeyanguniversity.ac.mw" class="glow">admissions@daeyanguniversity.ac.mw</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+2651234567" class="glow">+265 123 4567</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

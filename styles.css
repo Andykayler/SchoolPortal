@@ -1,0 +1,313 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 10px; 
+}
+
+header {
+    background: #333;
+    padding: 1em 0;
+    color: white;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+nav .logo {
+    font-size: 1.5em;
+}
+
+nav .logo span {
+    color: #f9a825;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav .login-btn {
+    background: #f9a825;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('mary.jpeg') no-repeat center center/cover;
+    height: 500px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out; /* Smooth transition */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.search-bar {
+    display: flex;
+    display: inline-block;
+    position: relative;
+}
+
+.search-bar input {
+    padding: 0.8em;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-bar button {
+    padding: 0.8em 1em;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Programs Section */
+.programs {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.programs h1 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.program-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/* Card Styles */
+.card {
+    background: #f4f4f4;
+    padding: 2em;
+    margin: 1em;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth animations */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Card Heading */
+.card h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+/* Card Link/Button */
+.card a {
+    display: inline-block;
+    margin-top: 1em;
+    background: #f9a825;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover Effects for Card */
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow */
+}
+
+/* Hover Effects for Card Link/Button */
+.card a:hover {
+    background: #d18c00; /* Darkens the button on hover */
+}
+
+/* Responsive Design */
+
+/* Tablets and Small Screens */
+@media (max-width: 992px) {
+    .card {
+        width: 45%; /* Adjusts width to 45% on medium screens */
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .card {
+        width: 100%; /* Full width on small screens */
+        margin: 1em 0; /* Adds vertical spacing between cards */
+    }
+
+    .program-cards {
+        flex-direction: column; /* Stacks cards vertically */
+        align-items: center; /* Centers cards horizontally */
+    }
+}
+
+/* Faculty Section */
+.faculty {
+    padding: 2em 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.faculty h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.faculty-profiles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.profile {
+    margin: 1em;
+    text-align: center;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+    border: 2px solid #ddd;
+}
+
+.profile h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.profile p {
+    font-size: 1em;
+    color: #777;
+}
+
+
+/* Footer */
+footer {
+    background-color: #202020;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #555;
+}
+
+.footer-column {
+    width: 30%;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column p {
+    margin: 5px 0;
+}
+
+.footer-column a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin: 20px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    font-size: 14px;
+}

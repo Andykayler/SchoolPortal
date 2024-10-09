@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo4.png" alt="University Logo" class="logo">
+            <h1>Admission Application Form: 2024/2025 Academic Year</h1>
+            <p>Completed forms should be returned to:</p>
+            <p>The University Registrar<br>Daeyang University<br>P.O. Box 30330<br>Capital City, Lilongwe, Malawi</p>
+        </header>
+
+        <form action="#" method="post">
+            <section class="applicant-details">
+                <h2>A. Applicant’s Personal Details</h2>
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required>
+
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+
+                <label for="initials">Initials:</label>
+                <input type="text" id="initials" name="initials">
+
+                <label>Sex:</label>
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="sex" value="male">
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="sex" value="female">
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality">
+
+                <label for="home-district">Home District:</label>
+                <input type="text" id="home-district" name="home-district">
+
+                <label for="traditional-authority">Traditional Authority:</label>
+                <input type="text" id="traditional-authority" name="traditional-authority">
+
+                <label for="village">Village:</label>
+                <input type="text" id="village" name="village">
+
+                <label for="national-id">National ID Number:</label>
+                <input type="text" id="national-id" name="national-id">
+
+                <label for="address">Contact Address:</label>
+                <textarea id="address" name="address" required></textarea>
+
+                <label for="mobile">Mobile Telephone:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+
+                <label for="other-number">Other Number:</label>
+                <input type="tel" id="other-number" name="other-number">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="religion">Religion:</label>
+                <input type="text" id="religion" name="religion">
+
+                <label for="denomination">Denomination:</label>
+                <input type="text" id="denomination" name="denomination">
+            </section>
+
+            <!-- Academic Details Section -->
+            <section class="academic-details">
+                <h2>B. Academic Details</h2>
+                <p>Arrange the subjects in order of merit from highest to lowest grades/points:</p>
+                <table class="academic-table">
+                    <thead>
+                        <tr>
+                            <th>Qualifications (e.g., MSCE/IGCSE)</th>
+                            <th>Centre Number</th>
+                            <th>Examination Number</th>
+                            <th>Subject</th>
+                            <th>Grades/Points</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="qualification1" placeholder="e.g., MSCE"></td>
+                            <td><input type="text" name="centreNumber1" placeholder="Centre Number"></td>
+                            <td><input type="text" name="examNumber1" placeholder="Exam Number"></td>
+                            <td><input type="text" name="subject1" placeholder="Subject"></td>
+                            <td><input type="text" name="grade1" placeholder="Grade"></td>
+                            <td><input type="text" name="year1" placeholder="Year"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="qualification2" placeholder="e.g., IGCSE"></td>
+                            <td><input type="text" name="centreNumber2" placeholder="Centre Number"></td>
+                            <td><input type="text" name="examNumber2" placeholder="Exam Number"></td>
+                            <td><input type="text" name="subject2" placeholder="Subject"></td>
+                            <td><input type="text" name="grade2" placeholder="Grade"></td>
+                            <td><input type="text" name="year2" placeholder="Year"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="qualification2" placeholder="e.g., IGCSE"></td>
+                            <td><input type="text" name="centreNumber2" placeholder="Centre Number"></td>
+                            <td><input type="text" name="examNumber2" placeholder="Exam Number"></td>
+                            <td><input type="text" name="subject2" placeholder="Subject"></td>
+                            <td><input type="text" name="grade2" placeholder="Grade"></td>
+                            <td><input type="text" name="year2" placeholder="Year"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="qualification2" placeholder="e.g., IGCSE"></td>
+                            <td><input type="text" name="centreNumber2" placeholder="Centre Number"></td>
+                            <td><input type="text" name="examNumber2" placeholder="Exam Number"></td>
+                            <td><input type="text" name="subject2" placeholder="Subject"></td>
+                            <td><input type="text" name="grade2" placeholder="Grade"></td>
+                            <td><input type="text" name="year2" placeholder="Year"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="qualification2" placeholder="e.g., IGCSE"></td>
+                            <td><input type="text" name="centreNumber2" placeholder="Centre Number"></td>
+                            <td><input type="text" name="examNumber2" placeholder="Exam Number"></td>
+                            <td><input type="text" name="subject2" placeholder="Subject"></td>
+                            <td><input type="text" name="grade2" placeholder="Grade"></td>
+                            <td><input type="text" name="year2" placeholder="Year"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="qualification2" placeholder="e.g., IGCSE"></td>
+                            <td><input type="text" name="centreNumber2" placeholder="Centre Number"></td>
+                            <td><input type="text" name="examNumber2" placeholder="Exam Number"></td>
+                            <td><input type="text" name="subject2" placeholder="Subject"></td>
+                            <td><input type="text" name="grade2" placeholder="Grade"></td>
+                            <td><input type="text" name="year2" placeholder="Year"></td>
+                        </tr>
+                        
+
+                        
+                        
+                        
+
+                        <!-- Additional rows can be added as needed -->
+                    </tbody>
+                </table>
+            
+                <h3>Other Qualifications</h3>
+                <label for="degree">Degree, Diploma, Certificate, etc.:</label>
+                <input type="text" id="degree" name="degree">
+            
+                <label for="examining-body">Examining Body:</label>
+                <input type="text" id="examining-body" name="examining-body">
+            
+                <label for="exam-centre">Examination Centre:</label>
+                <input type="text" id="exam-centre" name="exam-centre">
+            
+                <label for="exam-year">Year:</label>
+                <input type="text" id="exam-year" name="exam-year">
+            
+                <label for="work-experience">No. of years of work experience:</label>
+                <input type="text" id="work-experience" name="work-experience">
+            </section>
+            
+            <section class="study-selection">
+                <h2>C. Selection of Programmes of Study</h2>
+                <p>Indicate your programme choices in order of preference:</p>
+                <label for="choice1">1st Choice:</label>
+                <input type="text" id="choice1" name="choice1">
+                
+                <label for="choice2">2nd Choice:</label>
+                <input type="text" id="choice2" name="choice2">
+                
+                <!-- Add more choices as needed -->
+            </section>
+
+            <section class="financial-support">
+                <h2>E. Financial Support</h2>
+                <label for="sponsor-name">Sponsor Name:</label>
+                <input type="text" id="sponsor-name" name="sponsor-name">
+
+                <label for="sponsor-address">Sponsor Address:</label>
+                <textarea id="sponsor-address" name="sponsor-address"></textarea>
+
+                <label for="sponsor-phone">Telephone:</label>
+                <input type="tel" id="sponsor-phone" name="sponsor-phone">
+
+                <label for="sponsor-email">Email:</label>
+                <input type="email" id="sponsor-email" name="sponsor-email">
+            </section>
+
+            <section class="declaration">
+                <h2>I. Declaration by Applicant</h2>
+                <label for="declaration">I declare that all information provided is true and correct:</label>
+                <input type="checkbox" id="declaration" name="declaration" required>
+
+                <input type="submit" value="Submit Application">
+            </section>
+        </form>
+    </div>
+</body>
+</html>

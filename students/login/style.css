@@ -1,0 +1,23 @@
+/* Ensure full-height on mobile and large screens */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style for the eye icon */
+  .eye-icon {
+    cursor: pointer;
+    color: #6c757d;
+  }
+  
+  .eye-icon:hover {
+    color: #343a40;
+  }
+  
+  /* Form focus state */
+  input:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+  }
+  
