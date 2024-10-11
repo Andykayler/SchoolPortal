@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+
+<!-- jQuery (for animations) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnE1PI1pXEd47dIaz9+iiFnQj0bLh7q" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="../../index.html">Daeyang University</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT US</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            SCHOOLS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../../ict/ict.html">ICT</a></li>
+                            <li><a class="dropdown-item" href="../../commerce/commerce.html">Commerce</a></li>
+                            <li><a class="dropdown-item" href="../../PROJECT/nursing.html">Nursing</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning text-dark" href="../../students/login/login.html">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container bg-light shadow p-4 my-5 rounded">
+        
+            <img src="../../images/logo.png" alt="University Logo" class="logo img-fluid mb-3" style="max-width: 100px;">
+            <h1 class="display-6">Admission Application Form: 2024/2025 Academic Year</h1>
+            <p>Completed forms should be returned to:</p>
+            <p>The University Registrar<br>Daeyang University<br>P.O. Box 30330<br>Capital City, Lilongwe, Malawi</p>
+        
+
+            <form action="submit_application.php" method="post" enctype="multipart/form-data">
+
+            <section class="applicant-details">
+                <h2 class="mb-4">A. Applicant’s Personal Details</h2>
+                
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="surname" class="form-label">Surname:</label>
+                        <input type="text" id="surname" name="surname" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="firstname" class="form-label">First Name:</label>
+                        <input type="text" id="firstname" name="firstname" class="form-control" required>
+                    </div>
+                </div>
+
+           
+                <div class="mb-3">
+                    <label class="form-label">Sex:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="male" name="sex" value="male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="female" name="sex" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                </div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality"required>
+
+                <label for="home-district">Home District:</label>
+                <input type="text" id="home-district" name="home-district"required>
+
+                <label for="traditional-authority">Traditional Authority:</label>
+                <input type="text" id="traditional-authority" name="traditional-authority" required>
+
+                <label for="village">Village:</label>
+                <input type="text" id="village" name="village" required>
+
+                <label for="national-id">National ID Number:</label>
+                <input type="text" id="national-id" name="national-id" required>
+
+                <label for="address">Contact Address:</label>
+                <input type="text" id="address" name="address" required>
+                
+
+                <label for="mobile">Mobile Telephone:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+
+                <label for="other-number">Other Number:</label>
+                <input type="tel" id="other-number" name="other-number">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="religion">Religion:</label>
+                <input type="text" id="religion" name="religion" required>
+
+                <label for="denomination">Denomination:</label>
+                <input type="text" id="denomination" name="denomination" required>
+            </section>
+
+            <!-- Academic Details Section -->
+            <section class="academic-details">
+                <h2>B. Academic Details</h2>
+                <p>Arrange the subjects in order of merit from highest to lowest grades/points:</p>
+                <table class="table table-striped table-bordered academic-table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Qualifications (e.g., MSCE/IGCSE)</th>
+                            <th>Centre Number</th>
+                            <th>Examination Number</th>
+                            <th>Subject</th>
+                            <th>Grades/Points</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="eg. MSCE/IGCSE"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        
+
+                        
+                        
+                        
+
+                        <!-- Additional rows can be added as needed -->
+                    </tbody>
+                </table>
+                <p class="small-text">Qualifications comparable to IGCSE 'O' level shall be interpreted as follows for purposes of admission: A* = 1, A = 2, B = 3, C = 5, D = 7, EFG = 8.</p>
+                <p class="small-text">Other qualifications (for candidates applying for upgrading programmes and Masters)</p>
+
+                
+                <h3>Other Qualifications</h3>
+                <label for="degree">Degree, Diploma, Certificate, etc.:</label>
+                <input type="text" id="degree" name="degree">
+            
+                <label for="examining-body">Examining Body:</label>
+                <input type="text" id="examining-body" name="examining-body">
+            
+                <label for="exam-centre">Examination Centre:</label>
+                <input type="text" id="exam-centre" name="exam-centre">
+            
+                <label for="exam-year">Year:</label>
+                <input type="text" id="exam-year" name="exam-year">
+            
+                <label for="work-experience">No. of years of work experience:</label>
+                <input type="text" id="work-experience" name="work-experience">
+            </section>
+            
+            <section class="study-selection">
+                <h2>C. Selection of Programmes of Study</h2>
+                <p>Indicate your programme choices in order of preference:</p>
+                <h3>2. Program of Study</h3>
+                <label for="entryMode">Mode of Entry:</label>
+                <select id="entryMode" name="entryMode" required>
+                    <option value="normal">Normal Entry</option>
+                    <option value="mature">Mature Entry</option>
+                </select><br>
+
+                
+                <label for="studyMode">Mode of Study:</label>
+                <select id="studyMode" name="studyMode" required>
+                    <option value="weekday">Fulltime</option>
+                    <option value="weekend">Weekend</option>
+                    
+                </select><br>
+    
+
+                <label for="course">Select Program:</label>
+                <select id="course" name="course" required>
+                    <option value="diploma">Bachelor of commerce in Business Administration</option>
+                    <option value="bacc">Bachelor of Accountancy</option>
+                    <option value="bba">Masters in Data Science</option>
+                    <option value="hrm">Bachelor of Human Resource Management</option>
+                    <option value="ict">Bachelor of Science in Information Technology</option>
+                    <option value="health">Bachelor of science in Nursing and midwifery</option>
+                </select><br>
+                
+            
+                <label for="course">Select 2nd choice:</label>
+                <select id="course" name="course" required>
+                    <option value="diploma">Bachelor of commerce in Business Administration </option>
+                    <option value="bacc">Bachelor of Accountancy</option>
+                    <option value="bba">Masters in Data Science</option>
+                    <option value="hrm">Bachelor of Human Resource Management</option>
+                    <option value="ict">Bachelor of Science in Information Technology</option>
+                    <option value="health">Bachelor of science in Nursing and midwifery</option>
+                </select><br>
+                <label for="course">Select 3nd choice:</label>
+                <select id="course" name="course" required>
+                    <option value="diploma">Bachelor of commerce in Business Administration</option>
+                    <option value="bacc">Bachelor of Accountancy</option>
+                    <option value="bba">Masters in Data Science</option>
+                    <option value="hrm">Bachelor of Human Resource Management</option>
+                    <option value="ict">Bachelor of Science in Information Technology</option>
+                    <option value="health">Bachelor of science in Nursing and midwifery</option>
+                </select><br>
+
+                
+                
+                
+            </section>
+
+            <section class="financial-support">
+                <h2>E. Financial Support</h2>
+                <label for="sponsor-name">Sponsor Name:</label>
+                <input type="text" id="sponsor-name" name="sponsor-name">
+
+                <label for="sponsor-address">Sponsor Address:</label>
+                <input type="text" id="sponsor-address" name="sponsor-address">
+               
+
+                <label for="sponsor-phone">Telephone:</label>
+                <input type="tel" id="sponsor-phone" name="sponsor-phone">
+
+                <label for="sponsor-email">Email:</label>
+                <input type="email" id="sponsor-email" name="sponsor-email">
+
+                <div class="photo-section mb-4">
+                    
+                    <input type="file" class="form-control-file d-none" id="photo-upload" accept="image/*" name="photo" required>
+                    <button type="button" class="btn btn-secondary btn-block mt-2" id="photo-btn">upload Proof of payment</button>
+                    <span id="file-name" class="ml-2">No file chosen</span>
+                </div>
+                
+            </section>
+           
+            
+
+                <section class="declaration">
+                <h2>I. Declaration by Applicant</h2>
+                <label for="declaration">I declare that all information provided is true and correct:</label>
+                <input type="checkbox" id="declaration" name="declaration" required>
+                <div class="text-center">
+<!-- Add the disabled attribute to the submit button -->
+<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit-btn" disabled>Submit Application</button>
+                </div>
+            </section>
+        </form>
+    </div>
+    <script>
+        // Add jQuery Animation to Submit Button
+        $(document).ready(function(){
+            $("#submit-btn").hover(function(){
+                $(this).addClass("animate__animated animate__pulse");
+            }, function(){
+                $(this).removeClass("animate__animated animate__pulse");
+            });
+        });
+        // script.js
+
+$(document).ready(function () {
+    // Handle file selection when the custom button is clicked
+    $('#photo-btn').on('click', function () {
+        $('#photo-upload').click();
+    });
+
+    // Display the selected file name when a file is chosen
+    $('#photo-upload').on('change', function () {
+        const fileName = $(this).val().split('\\').pop();
+        $('#file-name').text(fileName || 'No file chosen');
+    });
+
+    // Button animation for submit
+    $('.submit-btn').on('mouseenter', function () {
+        $(this).animate({
+            opacity: 0.7,
+            fontSize: '20px'
+        }, 200);
+    });
+
+    $('.submit-btn').on('mouseleave', function () {
+        $(this).animate({
+            opacity: 1,
+            fontSize: '18px'
+        }, 200);
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+            // Get the navbar elements
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarMenu = document.querySelector('#navbarNav');
+
+            // Add event listener to the navbar toggler button
+            navbarToggler.addEventListener('click', function () {
+                // Toggle the 'show' class to control the visibility
+                navbarMenu.classList.toggle('show');
+            });
+        });
+        // Ensure the DOM is fully loaded before running this script
+$(document).ready(function() {
+    // Initially disable the submit button
+    $('#submit-btn').prop('disabled', true);
+
+    // Enable or disable the submit button based on the checkbox status
+    $('#declaration').on('change', function() {
+        if ($(this).is(':checked')) {
+            $('#submit-btn').prop('disabled', false);
+        } else {
+            $('#submit-btn').prop('disabled', true);
+        }
+    });
+});
+
+    </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3A67CjpjcN0v+gLTnNKTKf3jBPOV1+8BhV9" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
+        integrity="sha384-B4gt1jrGC7Jh4AgI8P+u0K3e1HA2vVZt97Ml5R8IWg5Qcp1G6UebdLF8KpXFFN3X" 
+        crossorigin="anonymous"></script>
+</body>
+</html>

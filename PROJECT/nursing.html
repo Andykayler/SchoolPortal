@@ -1,43 +1,257 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bachelor of Science in Nursing - Daeyang University</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Daeyang University - BSc Arts In Business</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333; /* Dark grey background */
+            padding: 1em;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f9ad25; /* Orange for 'Daeyang' */
+        }
+
+        .navbar .logo::after {
+            content: 'University';
+            font-weight: normal;
+            color: #A9A9A9; /* Grey for 'University' */
+            margin-left: 5px;
+        }
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            margin-left: 2em;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #f9f9f9;
+            padding: 2em;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+        }
+
+        .content .about, .content .structure, .content .career {
+            margin-bottom: 2em;
+        }
+
+        .content h2 {
+            font-size: 1.8em;
+            color: #1565C0; /* Blue color for section headings */
+            margin-bottom: 1em;
+        }
+
+        .content p, .content ul {
+            font-size: 1em;
+            color: #333;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+
+        .content ul li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Card Container */
+        .card {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            width: 80%;
+            margin: 2em auto;
+        }
+
+        /* Content inside card */
+        .card h2 {
+            font-size: 1.8em;
+            color: #1565C0; /* Blue headings */
+            margin-bottom: 1em;
+        }
+
+        .card p, .card ul {
+            font-size: 1em;
+            color: #333;
+        }
+
+        .card ul {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .navbar nav {
+                display: none; /* Hide navigation by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: #333; /* Dark grey background for dropdown */
+                position: absolute;
+                top: 60px; /* Position below navbar */
+                left: 0;
+                z-index: 1;
+            }
+
+            .navbar nav.active {
+                display: flex; /* Show nav when active */
+            }
+
+            .navbar .menu-btn {
+                display: block; /* Show menu button */
+            }
+
+            .navbar nav a {
+                margin: 0.5em 0;
+                margin-left: 0; /* Remove left margin for mobile view */
+                padding: 0.5em 1em; /* Add padding for links */
+                border: none; /* Remove borders */
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 0.5em;
+                margin: 1em;
+            }
+
+            .card {
+                padding: 1.5em;
+            }
+
+            .content h2 {
+                font-size: 1.5em;
+            }
+        }
+        footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+    </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo">Daeyang <span>University</span></div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Application Form</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Daeyang</div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <nav id="navbar">
+            <a href="../index.html">HOME</a>
+            <a href="../PROJECT/contact.html">CONTACT US</a>
+            <a href="#">APPLICATION FORM</a>
+        </nav>
     </header>
-    <main>
-        <section class="program-intro">
-            <h1>Bachelor of Science in Nursing</h1>
-            <p>Develop the skills necessary to excel in the field of healthcare as a nurse, with a focus on clinical practice and patient care.</p>
-        </section>
-        <section class="program-details">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Bachelor of Science in Nursing</h1>
+        <p>Develop the skills necessary to excel in the field of healthcare as a nurse, with a focus on clinical practice and patient care.</p>
+    </section>
+
+    <!-- Content Section inside Card -->
+    <section class="content">
+        <div class="card">
             <h2>About the Program</h2>
             <p>The Bachelor of Science in Nursing program at Daeyang University prepares students for the nursing profession by providing hands-on clinical experience and theoretical knowledge in areas like patient care, anatomy, physiology, and pharmacology.</p>
-            <div class ="card">
+           </div>
+
+        <div class="card">
+            <h2>Program Structure</h2>
+                <ul>
+                    <li>Year 1: Anatomy & Physiology, Microbiology, Nursing Ethics, Communication Skills</li>
+                    <li>Year 2: Medical-Surgical Nursing, Nutrition, Pharmacology, Clinical Nursing Practice</li>
+                    <li>Year 3: Pediatric Nursing, Psychiatric Nursing, Maternity Nursing, Community Health Nursing</li>
+                    <li>Year 4: Advanced Clinical Practice, Research in Nursing, Leadership and Management in Nursing</li>
+                </ul>
+        </div>
+
+        <div class="card">
             <h2>Program Structure</h2>
             <ul>
-                <li>Year 1: Anatomy & Physiology, Microbiology, Nursing Ethics, Communication Skills</li>
-                <li>Year 2: Medical-Surgical Nursing, Nutrition, Pharmacology, Clinical Nursing Practice</li>
-                <li>Year 3: Pediatric Nursing, Psychiatric Nursing, Maternity Nursing, Community Health Nursing</li>
-                <li>Year 4: Advanced Clinical Practice, Research in Nursing, Leadership and Management in Nursing</li>
+                <li>Year 1: Principles of Management, Economics, Business Communication, Financial Accounting</li>
+                <li>Year 2: Marketing, Organizational Behavior, Corporate Finance, Business Law</li>
+                <li>Year 3: Entrepreneurship, Operations Management, International Business, Human Resource Management</li>
+                <li>Year 4: Strategic Management, Business Ethics, Project Management, Final Year Project</li>
             </ul>
-</div>
-<div class = "card">
+        </div>
+
+        <div class="card">
             <h2>Career Opportunities</h2>
             <ul>
                 <li>Registered Nurse (RN)</li>
@@ -47,17 +261,55 @@
                 <li>Nursing Administrator</li>
                 <li>Healthcare Consultant</li>
             </ul>
-</div>
-<div class = "card">
+        </div>
+        <div class="card">
             <h2>Contact Information</h2>
             <p>For more information, please contact our admissions office at <a href="mailto:admissions@dyuni.ac.mw">admissions@dyuni.ac.mw</a> or call us at +265 1 711 361.</p>
         </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 Daeyang University. All rights reserved.</p>
+    </section>
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Section -->
+                <div class="col-md-4 mb-4">
+                    <h5>Contact us</h5>
+                    <p>P.O.Box 30330, Lilongwe, Malawi</p>
+                    <p>+265 1 711 361</p>
+                </div>
+                <!-- Email Section -->
+                <div class="col-md-4 mb-4">
+                    <h5>Email</h5>
+                    <p><a href="mailto:registrar@dyuni.ac.mw" class="text-light">registrar@dyuni.ac.mw</a></p>
+                </div>
+                <!-- About Section -->
+                <div class="col-md-4 mb-4">
+                    <h5>About</h5>
+                    <p>Daeyang University is a Christian University founded by the Miracle for Africa Foundation. It is situated behind Malawi Institute of Management (MIM), off the M1 road passing between Kamuzu International Airport and Kanengo industrial area.</p>
+                </div>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="text-center my-4">
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="text-center pt-3 border-top border-secondary">
+                <p>&copy; Daeyang University 2024</p>
+            </div>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

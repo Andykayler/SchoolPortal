@@ -5,6 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dyuni Loading Bar</title>
   <link rel="stylesheet" href="loading/styles.css">
+  <style>
+    /* Styles for the loader */
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0; /* Adjust as needed */
+      position: relative;
+      flex-direction: column;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 300px; /* Increased logo size */
+      opacity: 0;
+      animation: fade-in-out 2s infinite;
+    }
+
+    @keyframes fade-in-out {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .loading-bar-container {
+      width: 400px;
+      max-width: 600px; /* Increased width of progress bar */
+      height: 20px; /* Increased height of the progress bar */
+      background-color: #ddd;
+      margin-top: 40px; /* Increased spacing between logo and bar */
+      border-radius: 15px; /* Rounded edges for a smoother look */
+      overflow: hidden;
+    }
+
+    .loading-bar {
+      width: 0%;
+      height: 100%;
+      background-color: #f9a825; /* Progress bar color */
+      transition: width 0.6s ease;
+    }
+
+    .progress-percentage {
+      margin-top: 20px; /* Increased spacing below progress bar */
+      font-size: 24px; /* Larger text for the percentage */
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   <div class="loader-container">
@@ -13,9 +66,40 @@
       <div class="loading-bar-container">
         <div class="loading-bar"></div>
       </div>
+      <div class="progress-percentage">0%</div> <!-- Displays the percentage -->
     </div>
   </div>
 
-  <script src="loading/script.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      const loader = document.querySelector('.loader-container');
+      const loadingBar = document.querySelector('.loading-bar');
+      const progressPercentage = document.querySelector('.progress-percentage');
+
+      // Create a new XMLHttpRequest to load a large resource or file
+      const xhr = new XMLHttpRequest();
+
+      xhr.open('GET', 'new.html', true); // Example: load the next page
+      xhr.onprogress = function (event) {
+        if (event.lengthComputable) {
+          const percentComplete = Math.round((event.loaded / event.total) * 100);
+          loadingBar.style.width = percentComplete + "%";
+          progressPercentage.textContent = percentComplete + "%"; // Update the percentage display
+        }
+      };
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          // On successful load, hide loader
+          loader.style.opacity = "0";
+          loader.style.visibility = "hidden";
+          // Redirect to the new page after load
+          window.location.href = 'new.html';
+        }
+      };
+
+      xhr.send();
+    });
+  </script>
 </body>
 </html>

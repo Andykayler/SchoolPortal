@@ -11,9 +11,8 @@ const heroImages = [
   // Initialize the current index to track the image
   let currentImageIndex = 0;
   
-  // Function to change the background image of the hero section
   function changeHeroBackground() {
-      currentImageIndex = (currentImageIndex + 1) % heroImages.length; // Cycle through the array
+      currentImageIndex = (currentImageIndex + 1) % heroImages.length; 
       heroSection.style.backgroundImage = heroImages[currentImageIndex];
   }
   
@@ -22,3 +21,6 @@ const heroImages = [
   
   // Set the initial background image
   heroSection.style.backgroundImage = heroImages[currentImageIndex];
+  
+
+

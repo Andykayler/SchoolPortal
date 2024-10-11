@@ -4,125 +4,265 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuition Fees</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8d8181;
+            line-height: 1.6;
+            margin: 0;
+            padding-top: 70px; /* Adjusted for fixed navbar height */
+        }
+
+        /* Navbar Customization */
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            margin-left: 1rem;
+        }
+
+        .btn-warning {
+            color: #333 !important;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table Styles */
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        .bank-details th {
+            width: 40%;
+        }
+
+        .fees-table th, .other-fees th {
+            width: 40%;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+
+            .nav-link {
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            .table-responsive {
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
 </head>
 <body>
+    <!-- Header with Bootstrap Navbar -->
     <header>
-        <div class="logo">Daeyang University</div>
-        <nav>
-            <a href="../index.html">HOME</a>
-            <a href="#">CONTACT US</a>
-            <a href="#">APPLICATION FORM</a>
-            <a href="#" class="login-btn">LOGIN</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Daeyang University</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">APPLICATION FORM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning text-dark" href="#">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <div class="container">
+    <!-- Main Content -->
+    <main class="container mt-5 pt-4">
         <!-- Payment Section -->
-        <div class="card">
-            <h3>Fees. Payment of Admission Application </h3>
-            <p>The application fee of K20,000.00 into the following bank account:</p>
-            <table class="bank-details">
-                <tr>
-                    <td><strong>Name of the Bank:</strong></td>
-                    <td>NBS Bank</td>
-                </tr>
-                <tr>
-                    <td><strong>Account Name:</strong></td>
-                    <td>Daeyang University</td>
-                </tr>
-                <tr>
-                    <td><strong>Account Number:</strong></td>
-                    <td>14369667</td>
-                </tr>
-            </table>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Fees. Payment of Admission Application</h3>
+                <p class="card-text">The application fee of K20,000.00 can be paid into the following bank account:</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered bank-details">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Name of the Bank:</th>
+                                <td>NBS Bank</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Account Name:</th>
+                                <td>Daeyang University</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Account Number:</th>
+                                <td>14369667</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
         <!-- Tuition Fees Section -->
-        <div class="card">
-            <h3>G. Tuition Fees</h3>
-            <table class="fees-table">
-                <tr>
-                    <td>Masters</td>
-                    <td>K1,500,000</td>
-                    <td>Per Semester</td>
-                </tr>
-                <tr>
-                    <td>BBA Generic</td>
-                    <td>K678,600</td>
-                    <td>Per Semester</td>
-                </tr>
-                <tr>
-                    <td>BBA - Accountancy</td>
-                    <td>K678,600</td>
-                    <td>Per Semester</td>
-                </tr>
-                <tr>
-                    <td>BBA - HR Management</td>
-                    <td>K678,600</td>
-                    <td>Per Semester</td>
-                </tr>
-                <tr>
-                    <td>BSc in ICT</td>
-                    <td>K678,600</td>
-                    <td>Per Semester</td>
-                </tr>
-                <tr>
-                    <td>K156,600</td>
-                    <td></td>
-                    <td>Per Semester (Accommodation)</td>
-                </tr>
-                <tr>
-                    <td>Nursing and Midwifery</td>
-                    <td>K748,800</td>
-                    <td>Per Semester</td>
-                </tr>
-                <tr>
-                    <td>Accommodation</td>
-                    <td>K175,500</td>
-                    <td>Per Semester</td>
-                </tr>
-                <tr>
-                    <td>CHAMSU</td>
-                    <td>K1,500</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>PPE</td>
-                    <td>K20,000</td>
-                    <td></td>
-                </tr>
-            </table>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">G. Tuition Fees</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped fees-table mb-4">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Program</th>
+                                <th>Amount (K)</th>
+                                <th>Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Masters</td>
+                                <td>1,500,000</td>
+                                <td>Per Semester</td>
+                            </tr>
+                            <tr>
+                                <td>BBA Generic</td>
+                                <td>678,600</td>
+                                <td>Per Semester</td>
+                            </tr>
+                            <tr>
+                                <td>BBA - Accountancy</td>
+                                <td>678,600</td>
+                                <td>Per Semester</td>
+                            </tr>
+                            <tr>
+                                <td>BBA - HR Management</td>
+                                <td>678,600</td>
+                                <td>Per Semester</td>
+                            </tr>
+                            <tr>
+                                <td>BSc in ICT</td>
+                                <td>678,600</td>
+                                <td>Per Semester</td>
+                            </tr>
+                            <tr>
+                                <td>Nursing and Midwifery</td>
+                                <td>748,800</td>
+                                <td>Per Semester</td>
+                            </tr>
+                            <tr>
+                                <td>Accommodation</td>
+                                <td>175,500</td>
+                                <td>Per Semester</td>
+                            </tr>
+                            <tr>
+                                <td>CHAMSU</td>
+                                <td>1,500</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>PPE</td>
+                                <td>20,000</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <!-- Other Fees -->
-            <table class="other-fees">
-                <tr>
-                    <td>Administrative & Registration Fee</td>
-                    <td>K110,000</td>
-                    <td>Per Academic Year</td>
-                </tr>
-                <tr>
-                    <td>Students' Council Fee</td>
-                    <td>K7,500</td>
-                    <td>Per Academic Year</td>
-                </tr>
-                <tr>
-                    <td>Medical Fee</td>
-                    <td>K42,000</td>
-                    <td>Per Academic Year</td>
-                </tr>
-                <tr>
-                    <td>Library and Internet</td>
-                    <td>K20,000</td>
-                    <td>Per Academic Year</td>
-                </tr>
-                <tr>
-                    <td>User Fee</td>
-                    <td>K10,000</td>
-                    <td></td>
-                </tr>
-            </table>
+                <!-- Other Fees -->
+                <div class="table-responsive">
+                    <table class="table table-bordered other-fees">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Fee Type</th>
+                                <th>Amount (K)</th>
+                                <th>Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Administrative & Registration Fee</td>
+                                <td>110,000</td>
+                                <td>Per Academic Year</td>
+                            </tr>
+                            <tr>
+                                <td>Students' Council Fee</td>
+                                <td>7,500</td>
+                                <td>Per Academic Year</td>
+                            </tr>
+                            <tr>
+                                <td>Medical Fee</td>
+                                <td>42,000</td>
+                                <td>Per Academic Year</td>
+                            </tr>
+                            <tr>
+                                <td>Library and Internet</td>
+                                <td>20,000</td>
+                                <td>Per Academic Year</td>
+                            </tr>
+                            <tr>
+                                <td>User Fee</td>
+                                <td>10,000</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Continue Button -->
+                <div class="text-center">
+                    <a href="form/form.html" class="btn btn-primary btn-lg">Apply</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <!-- Custom JS for Navbar Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the navbar elements
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarMenu = document.querySelector('#navbarNav');
+
+            // Add event listener to the navbar toggler button
+            navbarToggler.addEventListener('click', function () {
+                // Toggle the 'show' class to control the visibility
+                navbarMenu.classList.toggle('show');
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3A67CjpjcN0v+gLTnNKTKf3jBPOV1+8BhV9" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
+        integrity="sha384-B4gt1jrGC7Jh4AgI8P+u0K3e1HA2vVZt97Ml5R8IWg5Qcp1G6UebdLF8KpXFFN3X" 
+        crossorigin="anonymous"></script>
 </body>
 </html>

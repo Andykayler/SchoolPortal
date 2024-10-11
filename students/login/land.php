@@ -166,19 +166,19 @@ if (!isset($_SESSION['studentID'])) {
                         <a class="nav-link" href="../../view/results.php">Results</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Courses</a>
+                        <a class="nav-link" href="../courses/mycourses.php">Courses</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Library</a>
+                        <a class="nav-link" href="../profile/profile.php">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact admin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="../../logout.php">Logout</a>
                     </li>
                 </ul>
             </div>

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daeyang University - BSc Computer Science</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
   
@@ -12,7 +15,8 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="logo">Daeyang</div>
-        <nav>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <nav id="navbar">
             <a href="../index.html">HOME</a>
             <a href="../PROJECT/contact.html">CONTACT US</a>
             <a href="#">APPLICATION FORM</a>
@@ -67,6 +71,50 @@
       
 
     </section>
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Section -->
+                <div class="col-md-4 mb-4">
+                    <h5>Contact us</h5>
+                    <p>P.O.Box 30330, Lilongwe, Malawi</p>
+                    <p>+265 1 711 361</p>
+                </div>
+                <!-- Email Section -->
+                <div class="col-md-4 mb-4">
+                    <h5>Email</h5>
+                    <p><a href="mailto:registrar@dyuni.ac.mw" class="text-light">registrar@dyuni.ac.mw</a></p>
+                </div>
+                <!-- About Section -->
+                <div class="col-md-4 mb-4">
+                    <h5>About</h5>
+                    <p>Daeyang University is a Christian University founded by the Miracle for Africa Foundation. It is situated behind Malawi Institute of Management (MIM), off the M1 road passing between Kamuzu International Airport and Kanengo industrial area.</p>
+                </div>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="text-center my-4">
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="text-center pt-3 border-top border-secondary">
+                <p>&copy; Daeyang University 2024</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>

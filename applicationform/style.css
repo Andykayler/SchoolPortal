@@ -1,103 +1,60 @@
 /* General Styles */
 body {
-   
     font-family: Arial, sans-serif;
     background-color: #8d8181;
     line-height: 1.6;
     margin: 0;
-    padding-top: 80px; 
-}
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;  /* Makes the header stick to the top */
-    top: 0;
-    left: 0;
-    width: 100%;      /* Fills the top completely */
-    z-index: 1000;    /* Ensures it stays above other elements */
+    padding-top: 70px; /* Adjusted for fixed navbar height */
 }
 
-
-.logo {
+/* Navbar Customization */
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
+.nav-link {
     margin-left: 1rem;
 }
 
-.login-btn {
-    background-color: #ffd700;
-    color: #333;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+.btn-warning {
+    color: #333 !important;
 }
 
 /* Card Styles */
 .card {
     background-color: white;
     padding: 20px;
-    margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Table Styles */
-table {
-    width: 60%; /* Reduced width to make the tables smaller */
-    margin: 0 auto 20px auto; /* Center the table with reduced size */
-    border-collapse: collapse;
-}
-
-table th, table td {
-    padding: 8px; /* Reduced padding to make table cells more compact */
-    border: 1px solid #ddd;
-    font-size: 14px; /* Decreased font size for a more compact table */
-}
-
-.fees-table tr td:first-child {
-    width: 50%;
-}
-
-.other-fees tr td:first-child {
-    width: 60%;
-}
-
-.bank-details td {
-    padding: 5px 0;
-    width: 50%;
-}
-
-table td {
+.table th, .table td {
+    vertical-align: middle;
     text-align: left;
-    font-size: 14px; /* Smaller font size */
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .container {
-        width: 100%;
+.bank-details th {
+    width: 40%;
+}
+
+.fees-table th, .other-fees th {
+    width: 40%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.3rem;
     }
 
-    table, tr, td {
-        display: block;
-        width: 100%;
+    .nav-link {
+        margin-left: 0;
+        padding-left: 0;
     }
 
-    td {
-        padding: 8px;
+    .table-responsive {
+        margin-bottom: 20px;
     }
 }
